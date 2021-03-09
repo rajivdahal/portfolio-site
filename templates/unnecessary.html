@@ -1,0 +1,81 @@
+{% extends 'basic.html' %}
+{% block title %}
+<title>Posts</title>
+{% load static%}
+
+{% endblock title %}
+
+<link href='https://fonts.googleapis.com/css?family=Castoro' rel='stylesheet'>
+{% block body %}
+<style type="text/css">
+	.posthead{font-size: 30px; display: flex; justify-content: center;align-items: center; margin: 30px;}
+
+
+.post{background-color:skyblue; border:1px solid white; color: black; border-radius: 5px; font-family: 'Castoro' ;}
+
+.post:hover .posttitle .title{animation: animation 0.5s linear forwards; }
+
+	
+.postcontainer{display: grid; grid-template-columns : 50% 50%; grid-gap: 20px; grid-auto-rows:minmax(500px,auto);}
+.posttitle{ background-color: white;font-size: 25px; text-align: center; color: red ; min-height: 120px;position: relative;}
+
+.postcontent{font-size: 20px; margin: 0px 20px 0px 20px;}
+.postcontent span{color: green; font-size: 25px; }
+.postcontent span:hover{color:blue;}
+.postdscimg{ display: flex;justify-content: space-between; }
+.postimg{margin: 20px;  }
+.postdsc{margin: 40px 20px 30px 0px;}
+.publisheddate{margin-top: 20px;float: right; margin-right: 20px; font-size: 20px;}
+.postbody{transition: 1s ease; }
+.postbody:hover{transform: scale(1.05);}
+@keyframes animation{
+	0%{ padding-top: 0px; }
+	50%{ padding-top: 40px; }
+	100%{ padding-top: 10px; }
+}
+
+
+
+  
+
+
+@media only screen and (max-width: 600px) 
+
+{
+  .postcontainer{display: grid; grid-template-columns: 50% 50%; grid-gap: 10px; grid-auto-rows: (150px,auto); margin: 50px auto;
+
+}
+</style>
+
+<div class="w3-padding-large w3-content w3-justify">
+	<div class="posthead">
+		welcome to gadgets news
+	</div>
+	<div class="postcontainer"  >
+		{% for post in post %}
+		<div class="post">
+			<div class="posttitle">
+				<span></span>
+
+				<div class="title">{{post.title}} </div></div>
+			<div class="postbody">
+			<div class="postdscimg">
+				<div class="postimg"><img src="{{post.image.url }}"></div>
+				<div class="postdsc">{{post.description}}</div>
+
+			</div>
+			<div class="postcontent">{{post.content|slice:"0:100"}}.....<a href="viewpost/{{post.slug}}"><span>continue reading</span></a> </div>
+			<div class="publisheddate">published on:{{post.date}}</div>
+			</div>
+			
+		
+		
+		</div>
+		{% endfor %}
+	</div>
+	
+	
+
+</div>
+
+{% endblock body %}

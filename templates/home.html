@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<title>Razeev Dahal</title>
+{% load static %}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style type="text/css">
+
+  html{scroll-behavior: smooth;}
+body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+.w3-row-padding img {margin-bottom: 12px}
+/* Set the width of the sidebar to 120px */
+.w3-sidebar {width: 120px;background: #222;}
+/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+#main {margin-left: 120px}
+ a
+{
+  text-decoration: none;
+}
+ 
+.box{background-color: transparent; width: 100%;}
+.box1{background-color: black;padding: 14px 16px; transition: 1s ease}
+.box1:hover{background-color: #ccc; color: black;}
+.box1 .name{padding-top: 10px; padding-bottom: 8px;}
+.box2{padding: 14px 16px; transition: 1s ease;}
+.box2:hover{background-color: black;}
+.box2 .name{padding-top: 10px; padding-bottom: 8px;}
+.box3{padding: 14px 16px; transition: 1s ease}
+.box3:hover{background-color: black; transition: 1s ease}
+.box3 .name{padding-top: 10px; padding-bottom: 8px;}
+.box4{padding: 14px 16px; transition: 1s ease}
+.box4:hover{background-color: black;}
+.box4 .name{padding-top: 10px; padding-bottom: 8px;}
+.Flex{display: flex;flex-basis: 100%;  list-style: none;  color: white; }
+.Flex li{ padding: 0 7px; text-transform: uppercase; }
+
+.yy{height: auto; max-width: 100%;}/* should define this property for any image for perfect fitting */
+.resume {padding: 10px 5px; font-size: 15px; width: 350px; margin-top: 30px; }
+.resumeinner{background-color: white;width: 80%; padding: 10px 20px; color: black; transition: 1s ease}
+.resumeinner:hover{ background-color: grey; color: white }
+.resumeinner i{padding: 0 20px;}
+ .tagbox2{width: 100%; color: #000;}
+ .tagbox1{width: 100%; color: #000;}
+ .tagbox2:hover .tagheader{background-color: grey;}
+ .tagbox1:hover .tagheader{background-color: grey;}
+ .tagbox2:hover .tagcomponent{background-color: white; color: black}
+ .tagbox1:hover .tagcomponent{background-color: white; color: black}
+.tagheader{background-color: #3a3a3a; text-align: center; padding: 32px 0; font-size: 24px; color: #fff;}
+.tagcomponent{background-color: #999999; padding: 16px 0;font-size: 15px ; border-bottom: 1px #ddd solid; text-align: center;}
+.tagcomponent span{font-size: 30px; margin: 10px 0px;}
+.tagcomponent:last-child{background-color: #3a3a3a; text-align: center; padding: 32px 0; font-size: 24px; color: #fff;border:none; transition: 1s ease;}
+.tagcomponent:last-child:hover{ color: green; }
+.Form1 input{width: 100%; height: 30px; padding: 30px 0px; margin: 10px 0;}
+.Form1 input:focus {
+    outline:none;
+}
+ button{ margin: 30px 0px 0px 20px; padding: 10px 10px; background-color: grey; transition: 1s ease; border-radius: 5px; }
+button:focus {
+    outline:none;
+}
+.Form1 button:hover{background-color: white; color: black; cursor: pointer; }
+.faicon{text-align: center;}
+.faicon i{ padding: 20px 20px; }
+
+#pic button{margin: 50px auto; padding: 10px 20px; background-color: grey; font-size: 20px;display: flex; align-items: center; }
+#pic button:hover{cursor: pointer; background-color: black; color: white;}
+.gallery img{ height: 300px; width: 500px;}
+
+
+
+/* Remove margins from "page content" on small screens */
+@media only screen and (max-width: 600px) 
+{
+  #main {margin-left: 0}
+  .tagbox2 .tagheader{margin-top: 30px;}
+  .gallery{display: flex; flex-direction: column;  }
+  .gallery img{width: 100%;}
+  iframe{width: 100%; height: 100px;}
+  #mynavbar{width: 100%;}
+  #about{width: 100%;}
+}
+
+</style>
+<body class="w3-black">
+
+
+<!-- Icon Bar (Sidebar - hidden on small screens)    -->
+<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center" style="background-color: #222222;">
+  <!-- Avatar image in top left corner -->
+  
+  <a href="/">
+ <div class="box">
+   <div class="box1">
+     <div class="icon"><i class="fa fa-home w3-xxlarge"></i></div>
+     <div class="name">HOME</div>
+   </div>
+  </a>
+   <a href="/post">
+   <div class="box2">
+      <div class="icon"><i class="fa fa-clipboard w3-xxlarge"></i></div>
+      <div class="name">POST</div>
+   </div>
+   </a>
+    <a href="/blogs">
+   <div class="box2">
+      <div class="icon"><i class="fa fa-pencil w3-xxlarge"></i></div>
+     <div class="name">BLOGS</div>
+   </div>
+   </a>
+  
+   <a href="#about">
+   <div class="box2">
+      <div class="icon"><i class="fa fa-user w3-xxlarge"></i></div>
+     <div class="name">ABOUT</div>
+   </div>
+   </a>
+   <a href="#pic">
+   <div class="box3">
+      <div class="icon"><i class="fa fa-eye w3-xxlarge"></i></div>
+     <a href=""><div class="name">PHOTOS</div></a>
+   </div>
+     </a>
+ <a href="#contact">    
+   <div class="box4">
+      <div class="icon"><i class="fa fa-envelope w3-xxlarge"></i></div>
+     <a href="#"><div class="name">CONTACT</div></a>
+   </div>
+ </div>
+ </a>
+</nav>
+
+<!-- Navbar on small screens (Hidden on medium and large screens) -->
+<div class="w3-top w3-hide-large w3-hide-medium w3-content" id="myNavbar">
+  <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off">
+     <ul class="Flex">
+       <li><a href=""> home</a></li>
+       <li><a href=""> about</a></li>
+       <li><a href=""> photos</a></li>
+       <li><a href=""> contact</a></li>
+     </ul>
+
+    
+  </div>
+</div>
+
+<div class="w3-padding-large" id="main">
+  <!-- Header/Home -->
+  <header class="w3-container w3-padding-32 w3-center w3-black">
+    <h1 class="w3-jumbo"><span class="w3-hide-small">I'm</span> Razeev Dahal.</h1>
+    <p>Fashion lover and Web Developer.</p>
+    <img src="{% static 'img/bg.png' %}" alt="boy" class="yy" width="992" height="1000">
+  </header>
+
+  <!-- About Section -->
+  <div class="w3-content w3-justify w3-text-grey" id="about">
+    <h2 class="w3-text-light-grey">My Name</h2>
+    <hr style="width:200px" class="w3-opacity">
+    <p style="font-size: 20px">Hi!! its me Rajiv dahal , i am a web developer and a Computer Engineer 
+      i would love to see your response regarding this site . If you want to contact me for any querry you can 
+      directly call me or message me in social medias clicking the Contact section which is in the left side of this webpages
+    </p>
+     <div class="skills">
+       <div class="skillname" style="color: white; margin-bottom: 30px;"><h2>My Skills</h2></div>
+       <div class="skillcategory">
+         <div class="photography">
+           <h6 class="w3-wide">photography</h6>
+           <div class="w3-bar w3-white">
+              <div style="width: 90%; height: 30px; background-color: grey;"></div>
+            
+         </div>
+       </div>
+       <div class="webdesign">
+           <h6 class="w3-wide">web design</h6>
+           <div class="w3-bar w3-white">
+              <div style="width: 80%; height: 30px; background-color: grey;"></div>
+            
+         </div>
+       </div>
+       <div class="photoshop">
+           <h6 class="w3-wide">photoshop</h6>
+           <div class="w3-bar w3-white">
+              <div style="width: 70%; height: 30px; background-color: grey;"></div>
+            
+         </div>
+       </div>
+     </div>
+    </div>
+
+    <div class="resume w3-container">
+      <a href=""><div class="resumeinner w3-center">
+     <i class="fa fa-download"></i><span>download resume</span>
+     </div></a> 
+    </div>
+    
+    <!-- Grid for pricing tables -->
+    <h3 class="w3-padding-16 w3-text-light-grey">My Price</h3>
+    <div class="w3-row-padding">
+      <div class="w3-half ">
+        <div class="tagbox1">
+          <div class="tagheader">BASIC</div>
+          <div class="tagcomponent"><a href=""> web design</a></div>
+          <div class="tagcomponent"><a href=""> photography</a></div>
+          <div class="tagcomponent"><a href=""> 5 gb storage</a></div>
+          <div class="tagcomponent"><a href=""> Mail support</a></div>
+          <div class="tagcomponent"><a href=""> <span>10$</span><br>per month</a></div>
+          <a href=""><div class="tagcomponent">sign up</div></a>
+        </div>
+       
+      </div>
+
+      <div class="w3-half ">
+        <div class="tagbox2">
+          <div class="tagheader">PRO</div>
+          <div class="tagcomponent"><a href=""> web design</a></div>
+          <div class="tagcomponent"><a href=""> photography</a></div>
+          <div class="tagcomponent"><a href=""> 50 gb storage</a></div>
+          <div class="tagcomponent"><a href=""> endless support</a></div>
+          <div class="tagcomponent"><a href=""> <span>25$</span><br>per month</a></div>
+          <a href=""><div class="tagcomponent">sign up</div></a>
+        </div>
+       
+      </div>
+    <!-- End Grid/Pricing tables -->
+    </div>
+    
+    <!-- Testimonials -->
+    <h3 class="w3-padding-24 w3-text-light-grey" style="margin-bottom: 60px;">My Reputation</h3>  
+      <div class="comment" style="display: flex;margin: 40px 40px;">
+        <div class="commenting">
+          <img src="{% static 'img/bandmember.jpg' %}" class="w3-circle" style="width: 80px;">
+        </div>
+        <div class="commentinfo" style="display: flex; flex-direction: column;">
+          <div class="commentorinfo" style="display: flex; flex-direction: row; justify-content: space-between;">
+          <div class="cname">sushant karki</div>
+          <div class="cinfo"> CEO at Islington college</div>
+          </div>
+          <div class="realcomment" style="margin-top: 30px;">Razeev dahal is a very good web developer.</div>
+        </div>
+      
+      </div>
+       <div class="comment" style="display: flex; margin: 40px 40px;">
+        <div class="commenting">
+          <img src="{% static 'img/avatar_g2.jpg' %}" class="w3-circle" style="width: 80px;">
+        </div>
+        <div class="commentinfo" style="display: flex; flex-direction: column;">
+          <div class="commentorinfo" style="display: flex; flex-direction: row; justify-content: space-between;">
+          <div class="cname">Alex jung Karki</div>
+          <div class="cinfo"> HOD at Pulchowk campus computer department</div>
+          </div>
+          <div class="realcomment" style="margin-top: 30px;">Razeev dahal do things very nicely.</div>
+        </div>
+      
+      </div>
+  <!-- End About Section -->
+  </div>
+  
+  <!-- Portfolio Section -->
+  <div class="Portfolio w3-content" id="pic">
+  <h2 class="w3-text-light-grey">My Photos</h2>
+    <hr style="width:200px" class="w3-opacity">
+   <div class="gallery" style="display: flex; justify-content: space-between; ">
+     <div > <a href="{% static 'img/1.jpg' %}"><img src="{% static 'img/1.jpg' %}" ></a></div>
+     <div > <a href="{% static 'img/2.jpg' %}"><img src="{% static 'img/2.jpg' %}"  ></a></div>
+   </div> 
+   <div class="gallery " style="display: flex; justify-content: space-between; ">
+     <div > <a href="{% static 'img/3.jpg' %}"><img src="{% static 'img/3.jpeg' %}" ></a></div>
+     <div > <a href="{% static 'img/4.jpg' %}"><img src="{% static 'img/4.jpg' %}"  ></a></div>
+   </div> 
+     <a href="more"><button type="button">more</button></a>
+
+  </div>  
+
+  <!-- Contact Section -->
+  <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
+    <h2 class="w3-text-light-grey">Contact Me</h2>
+    <hr style="width:200px" class="w3-opacity">
+
+    <div class="w3-section">
+      <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Kathmandu,Nepal</p>
+      <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: +977 98........</p>
+      <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: rajivdahal2@gmail.com</p>
+    </div><br>
+    <p>Let's get in touch. Send me a message:</p>
+<form class="Form1" method="post" action="/"> {% csrf_token %}
+  <label for="name"></label><br>
+  <input type="text" id="name" name="name" placeholder="Name">
+  
+  <label for="email"></label><br>
+  <input type="text" id="email" name="email" placeholder="email">
+  <label for="subject"></label><br>
+  <input type="text" id="subject" name="subject" placeholder="subject">
+  <label for="message"></label><br>
+  <input type="text" id="messaeg" name="message" placeholder="message">
+  <button type="submit"><i class="fa fa-paper-plane"></i> SEND MESSAGE</button>
+</form>
+  <!-- End Contact Section -->
+  </div>
+  
+    <!-- Footer -->
+  <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge faicon"> 
+    <a href="https://www.facebook.com/suprim.dahal.7/"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
+    <a href="https://www.instagram.com/rxzd.hl/"><i class="fa fa-instagram w3-hover-opacity"></i></a>
+    <a href=""><i class="fa fa-snapchat w3-hover-opacity"></i></a>
+    <a href=""><i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <a href=""><i class="fa fa-twitter w3-hover-opacity"></i></a>
+    <a href=""><i class="fa fa-linkedin w3-hover-opacity"></i></a>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1808962.0675091692!2d85.35736320000001!3d27.682406399999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb198a307baabf%3A0xb5137c1bf18db1ea!2sKathmandu%2044600!5e0!3m2!1sen!2snp!4v1608609308685!5m2!1sen!2snp" width="600" height="400" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+    
+  <!-- End footer -->
+  </footer>
+
+<!-- END PAGE CONTENT -->
+</div>
+
+
+</body>
+</html>

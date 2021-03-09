@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<title></title>
+{% load static%}
+<style type="text/css">
+  *{margin: 0; padding: 0; box-sizing: border-box;  }
+   a
+  
+{
+  text-decoration: none;
+}
+body{background-color: #dfbaaa;height: 1000px;}
+
+
+.box{background-color: transparent; width: 100%;}
+.box1{background-color: black;padding: 14px 16px; transition: 1s ease;padding:65px 0;}
+.box1:hover{background-color: #ccc; color: black;}
+.box1 .name{padding-top: 10px; padding-bottom: 8px;}
+.box2{padding: 14px 16px; transition: 1s ease;padding:65px 0;}
+.box2:hover{background-color: black;}
+.box2 .name{padding-top: 10px; padding-bottom: 8px;}
+.box3{padding: 14px 16px; transition: 1s ease}
+.box3:hover{background-color: black; transition: 1s ease;padding:65px 0;}
+.box3 .name{padding-top: 10px; padding-bottom: 8px;}
+
+.box4 .name{padding-top: 10px; padding-bottom: 8px;}
+.Flex{display: flex;flex-basis: 100%;  list-style: none;  color: white; }
+.Flex li{ padding: 0 7px; text-transform: uppercase; }
+
+.header{background-image: url({% static 'img/faro-2903060_1280.jpg' %});
+  height: 90vh;width: 100%;
+  
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+
+.content{position: absolute;top: 40%; left: 35%;overflow: hidden; color: #ff8100;}
+.content_container{list-style: none; font-size: 40px; font-weight: 600;height:70px;  }
+.content_container_item{display:block; padding: 0 20px 0 20px;animation: change 4s forwards; animation-delay: 1s}
+.content_container_item:first-child{padding-left: 60px;}
+.content_container:before{content: '['; top: 0 ; font-size: 50px;}
+.content_container:after{content: ']'; right: 0;top: 0;position: absolute;font-size: 50px}
+
+ .content_container:before,.content_container:after{animation: opacity 2s; animation-iteration-count: infinite;}
+ .bannerurl{position: absolute;top: 55%; left: 35%; font-size: 20px;font-weight: 600; width: 525px; color:#6a0f0f }
+
+
+.wrapper{display: grid;grid-template-columns: 32.2% 32.2% 32.2%; grid-auto-rows: minmax(250px,auto); margin-left: 35px; grid-gap: 80px; margin-top: 40px; }
+.blog_item{border:1px solid transparent; border-radius: 2px;box-shadow: 5px 10px 18px #888888;transition:0.5s ease; }
+
+.blog_dsc{font-weight: 600; background-color: white;font-family: 'roborto'; line-height: 30px;padding:20px 20px 0px 20px;min-height: 180px;}
+.blog_review{ background-color: #d8d8d8; min-height: 30px; display: flex;justify-content: space-between; padding: 10px 10px 10px 10px;}
+.blog_review span{margin-left: 5px; font-size: 10px;}
+.blog_item:hover{box-shadow: 0px 0px 0px #888888;}
+.blog_title{font-family: 'roborto'; font-size: 30px; background-color: white; text-align: center;color: purple;}
+.blog_like .fa:active{transform: scale(1.2);}
+
+ 
+ 
+
+
+
+@keyframes opacity{
+  0%{opacity: 0}
+  50%{opacity: 0.5}
+  0%{opacity: 1}
+}
+@keyframes change{
+  0%{transform: translateY(0px);}
+  50%{transform:translateY(-60px)}
+  100%{transform:translateY(-130px)}
+
+}
+
+
+
+</style>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<body>
+
+
+<!-- Icon Bar (Sidebar - hidden on small screens)    -->
+<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center" style="background-color: #222222; color: white;">
+  <!-- Avatar image in top left corner -->
+  
+  <a href="/">
+ <div class="box">
+   <div class="box1">
+     <div class="icon"><i class="fa fa-home w3-xxlarge"></i></div>
+     <div class="name">HOME</div>
+   </div>
+  </a>
+   <a href="/post">
+   <div class="box2">
+      <div class="icon"><i class="fa fa-clipboard w3-xxlarge"></i></div>
+      <div class="name">POST</div>
+   </div>
+   </a>
+    <a href="/blogs">
+   <div class="box2">
+      <div class="icon"><i class="fa fa-pencil w3-xxlarge"></i></div>
+     <div class="name">BLOGS</div>
+   </div>
+   </a>
+  
+ 
+</nav>
+
+<!-- Navbar on small screens (Hidden on medium and large screens) -->
+<div class="w3-top w3-hide-large w3-hide-medium w3-content" id="myNavbar">
+  <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off">
+     <ul class="Flex">
+       <li><a href=""> home</a></li>
+       <li><a href=""> about</a></li>
+       <li><a href=""> photos</a></li>
+       <li><a href=""> contact</a></li>
+     </ul>
+
+    
+  </div>
+</div>  
+
+<section id="blogbanner"  >
+  <div class="header">
+<div class="content">
+  <ul class="content_container">
+    <li class="content_container_item">hello Every Reader</li>
+    <li class="content_container_item">welcome to blog page</li>
+  </ul>
+</div>
+<div class="bannerurl w3-justify">Think before you speak. Read before you think.</div>
+</div>
+
+</section>
+<section id="blogcontent" class="w3-content" >
+  <div class="wrapper">
+    {%for b in blog%}
+    <div class="blog_item">
+       <div class="blog_banner" ><img src="{{b.image.url}}"></div>
+
+       <a href="viewblog/{{b.slug}}">
+        <div class="blog_title">{{b.title}}</div>
+      <div class="blog_dsc w3-justify">{{b.content|slice:"0:150"}}</div>
+    </a> 
+       <div class="blog_review">
+         <div class="blog_like"><i class="fa fa-heart" aria-hidden="true" id="heart" onclick="like()"></i><span id="like_no">0</span></div>
+         <div class="blog_comment"><a href=""><i class="fa fa-comment" aria-hidden="true" id="comment" onclick="comment()"></a></i><span id="comment_no">1</span></div>
+         <div class="blog_watch"><i class="fa fa-eye" aria-hidden="true" id="eye"></i><span>1</span id="watch_no" ></div>
+       </div>
+       
+      
+    </div>
+    {% endfor %}
+    </div>
+    
+
+</section>
+<script type="text/javascript">
+
+   function like(){
+    if (document.getElementById("heart").style.color=="red") {
+      document.getElementById("heart").style.color="black";
+       var num=document.getElementById("like_no").innerHTML;
+       var like_count = parseInt(num);
+       var like_count=+like_count - 1;
+       document.getElementById("like_no").innerHTML= +like_count;
+    }
+    else{
+    document.getElementById("heart").style.color="red";
+    var num=document.getElementById("like_no").innerHTML;
+    var like_count = parseInt(num);
+    var like_count=+like_count + 1;
+    document.getElementById("like_no").innerHTML= +like_count;
+   }
+ 
+    }
+   
+
+  
+
+</script>
+
+</body>
+
+
+
+</html>

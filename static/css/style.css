@@ -1,0 +1,74 @@
+
+  html{scroll-behavior: smooth;}
+body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+.w3-row-padding img {margin-bottom: 12px}
+/* Set the width of the sidebar to 120px */
+.w3-sidebar {width: 120px;background: #222;}
+/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+#main {margin-left: 120px}
+ a
+{
+  text-decoration: none;
+}
+ 
+.box{background-color: transparent; width: 100%;}
+.box1{background-color: black;padding: 14px 16px; transition: 1s ease}
+.box1:hover{background-color: #ccc; color: black;}
+.box1 .name{padding-top: 10px; padding-bottom: 8px;}
+.box2{padding: 14px 16px; transition: 1s ease;}
+.box2:hover{background-color: black;}
+.box2 .name{padding-top: 10px; padding-bottom: 8px;}
+.box3{padding: 14px 16px; transition: 1s ease}
+.box3:hover{background-color: black; transition: 1s ease}
+.box3 .name{padding-top: 10px; padding-bottom: 8px;}
+.box4{padding: 14px 16px; transition: 1s ease}
+.box4:hover{background-color: black;}
+.box4 .name{padding-top: 10px; padding-bottom: 8px;}
+.Flex{display: flex;flex-basis: 100%;  list-style: none;  color: white; }
+.Flex li{ padding: 0 7px; text-transform: uppercase; }
+
+.yy{height: auto; max-width: 100%;}/* should define this property for any image for perfect fitting */
+.resume {padding: 10px 5px; font-size: 15px; width: 350px; margin-top: 30px; }
+.resumeinner{background-color: white;width: 80%; padding: 10px 20px; color: black; transition: 1s ease}
+.resumeinner:hover{ background-color: grey; color: white }
+.resumeinner i{padding: 0 20px;}
+ .tagbox2{width: 100%; color: #000;}
+ .tagbox1{width: 100%; color: #000;}
+ .tagbox2:hover .tagheader{background-color: grey;}
+ .tagbox1:hover .tagheader{background-color: grey;}
+ .tagbox2:hover .tagcomponent{background-color: white; color: black}
+ .tagbox1:hover .tagcomponent{background-color: white; color: black}
+.tagheader{background-color: #3a3a3a; text-align: center; padding: 32px 0; font-size: 24px; color: #fff;}
+.tagcomponent{background-color: #999999; padding: 16px 0;font-size: 15px ; border-bottom: 1px #ddd solid; text-align: center;}
+.tagcomponent span{font-size: 30px; margin: 10px 0px;}
+.tagcomponent:last-child{background-color: #3a3a3a; text-align: center; padding: 32px 0; font-size: 24px; color: #fff;border:none; transition: 1s ease;}
+.tagcomponent:last-child:hover{ color: green; }
+.Form1 input{width: 100%; height: 30px; padding: 30px 0px; margin: 10px 0;}
+.Form1 input:focus {
+    outline:none;
+}
+ button{ margin: 30px 0px 0px 20px; padding: 10px 10px; background-color: grey; transition: 1s ease; border-radius: 5px; }
+button:focus {
+    outline:none;
+}
+.Form1 button:hover{background-color: white; color: black; cursor: pointer; }
+.faicon{text-align: center;}
+.faicon i{ padding: 20px 20px; }
+
+#pic button{margin: 50px auto; padding: 10px 20px; background-color: grey; font-size: 20px;display: flex; align-items: center; }
+#pic button:hover{cursor: pointer; background-color: black; color: white;}
+.gallery img{ height: 300px; width: 500px;}
+
+
+
+/* Remove margins from "page content" on small screens */
+@media only screen and (max-width: 600px) 
+{
+  #main {margin-left: 0}
+  .tagbox2 .tagheader{margin-top: 30px;}
+  .gallery{display: flex; flex-direction: column;  }
+  .gallery img{width: 100%;}
+  iframe{width: 100%; height: 100px;}
+  #mynavbar{width: 100%;}
+  #about{width: 100%;}
+}

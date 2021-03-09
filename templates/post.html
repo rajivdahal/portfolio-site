@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+<title>gadgets news</title>
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+{% load static%}
+
+<style type="text/css">
+  *{margin: 0; padding: 0; boxx-sizing: border-boxx;  }
+   a
+  
+{
+  text-decoration: none;
+}
+
+body{ background-color: #e5eaef;height: 2000px;  }
+
+.boxxx{background-color: transparent; width: 100%;}
+.boxx1{background-color: black;padding: 14px 16px; transition: 1s ease; padding:65px 0;}
+.boxx1:hover{background-color: #ccc; color: black;}
+.boxx1 .name{padding-top: 10px; padding-bottom: 8px;}
+.boxx2{padding: 14px 16px; transition: 1s ease;padding:65px 0;}
+.boxx2:hover{background-color: black; color: white;}
+.boxx2 .name{padding-top: 10px; padding-bottom: 8px;}
+.boxx3{padding: 14px 16px; transition: 1s ease;padding:65px 0;}
+.boxx3:hover{background-color: black; transition: 1s ease;}
+
+
+.Flex{display: flex;flex-basis: 100%;  list-style: none;   }
+.Flex li{ padding: 0 7px; text-transform: uppercase; }
+
+.header{background-image: url({% static 'img/city-3213676_1920.jpg' %});
+  height: 90vh;width: 100%;
+  
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+
+.content{position: absolute;top: 40%; left: 35%;overflow: hidden; }
+.content_container{list-style: none; font-size: 40px; font-weight: 600;height:70px;  }
+.content_container_item{display:block; padding: 0 20px 0 20px;animation: change 4s forwards; animation-delay: 1s}
+.content_container_item:first-child{padding-left: 60px;}
+.content_container:before{content: '['; top: 0 ; font-size: 50px;}
+.content_container:after{content: ']'; right: 0;top: 0;position: absolute;font-size: 50px}
+
+ .content_container:before,.content_container:after{animation: opacity 2s; animation-iteration-count: infinite;}
+ .bannerurl{position: absolute;top: 55%; left: 35%; font-size: 20px;font-weight: 600; width: 525px; color:#125a73; }
+
+ 
+
+
+/*carasoul style starts here*/
+.slider{width: 800px;  border-radius: 10px;overflow: hidden; margin-left: 100px; }
+.slides{width:500%;height: 500px; display: flex;}
+.slides input{ display: none; }
+.slide{width: 20%; transition: 1s;}
+.slide img{width:800px;height: 500px; }
+.manual-btn{border:2px solid blue;padding: 5px;border-radius: 10px;cursor: pointer; transition: 1s;}
+.navigation-manual{ position: absolute; width: 800px; margin-top: 450px; display: flex;justify-content: center; }
+.manual-btn:not(:last-child){
+  margin-right: 40px;
+}
+.manual-btn:hover{background-color: blue}
+#radio1:checked~.first{margin-left: 0}
+#radio2:checked~.first{margin-left: -20%}
+#radio3:checked~.first{margin-left: -40%}
+#radio4:checked~.first{margin-left: -60%}
+.navigation-auto{position: absolute; width: 800px; display: flex; justify-content: center;margin-top: 450px}
+.navigation-auto div{ border:2px solid blue; padding: 5px; border-radius: 10px;  }
+.navigation-auto div:not(:last-child){
+  margin-right: 40px;
+}
+#radio1:checked~ .navigation-auto .auto-btn1{background-color: blue}
+#radio2:checked~ .navigation-auto .auto-btn2{background-color: blue}
+#radio3:checked~ .navigation-auto .auto-btn3{background-color: blue}
+#radio4:checked~ .navigation-auto .auto-btn4{background-color: blue}
+
+
+
+/*carasoul style ends here*/
+
+
+.trending_container{min-height:400px;width: 400px; background-color: white; border-radius: 10px;}
+.trending span{font-weight: 600;}
+.trending{font-size: 30px;margin: 10px 10px; font-family: 'roborto';}
+.trending_post_content{margin-top: 20px;}
+.trending_post_content .post_category{ color: grey; font-weight: 300px; font-size: 20px; display: flex;justify-content: center; }
+.trending_post_content .post_title{ font-weight: 600; font-size:22px; font-family: 'Open Sans'; transition: 0.5s}
+.trending_post_content .post_title:hover{color: skyblue;}
+.trending_post_content  .post_date{color: grey; font-weight: 300px; font-size: 15px; display: flex;justify-content: center;}
+.trending_post_image{display: flex;justify-content: center;margin-top: 60px;}
+
+.previouss_next_wrapper ul li{text-decoration: none;display: inline; padding: 10px; font-size: 15px; color: green; font-weight: 600; }
+
+.previouss_next_wrapper{text-align:center; padding:  20px; }
+
+
+
+#middle .animation_container{  font-size: 40px; font-weight: 600; color: #3737c3; display: flex;justify-content: center; margin-left: 150px;}
+#middle .animation_container p{animation:blinks 2s forwards }
+#middle .dot_container{ display: flex; }
+#middle .animation_container .dot_container .dot1{animation: dot 4s forwards; }
+#middle .animation_container .dot_container .dot2{animation: dot 5s forwards; }
+#middle .animation_container .dot_container .dot3{animation: dot 6s forwards; }
+
+.main_portal{display: grid; grid-template-columns: 500px 500px; justify-content: center; margin-left: 100px; grid-gap: 15px;}
+.portal_left{ grid-row-start: 1; grid-row-end: 3;  border-radius: 5px; box-shadow: 0px 0px 30px #888888; margin-top: 20px; background-color: skyblue;}
+.portal_right_upper{  background-color: skyblue; margin-top: 20px;}
+.portal_right_lower{  background-color: skyblue;}
+.portal_left .main_left_image img{height: 100%; width: 100%;  }
+.portal_left .main_left_title{font-size: 22px; font-weight: 600; padding: 10px 10px; display: flex; justify-content: center;}
+.portal_left .main_left_description{font-size: 15px;  padding: 10px 10px; font-size: 18px; padding: 10px; color: green;}
+
+
+.main_image img{ height: 200px; width: 300px; }
+
+.portal_right_upper{box-shadow: 0px 0px 30px #888888; transition: 0.5s; }
+.portal_right_upper:hover{box-shadow:0px 0px 20px  white ; }
+.portal_right_lower{box-shadow: 0px 0px 30px #888888;transition: 0.5s; }
+.portal_right_lower:hover{box-shadow:0px 0px 20px  white;  }
+
+.main_image{display: flex; justify-content: center;}
+.portal_right_upper .main_title{ display: flex;justify-content: center; margin: 10px; font-weight: 600; color: grey;}
+.portal_right_lower .main_title{ display: flex;justify-content: center; margin: 10px; font-weight: 600;color: grey;}
+.main_description{color: red; padding: 10px; font-size: 15px;}
+.main_content{color: green; font-size: 17px;}
+
+
+.previouss_next_wrapper_main_content ul li{text-decoration: none;display: inline; padding: 10px; font-size: 15px; color: green; font-weight: 600; border-radius: 5px; background-color: skyblue; transition: 0.5s; }
+.previouss_next_wrapper_main_content ul{margin-top: 20px;}
+.previouss_next_wrapper_main_content ul a:hover{ background-color: brown; }
+
+
+.previouss_next_wrapper_main_content{text-align:center; padding:  20px; }
+
+
+.post_footer{ min-height:100px; width: 100%; background-color: #222222; display: grid;  grid-template-columns: 30% 70%;}
+.footer_brand{display: flex; justify-content: flex-end; align-items: center; justify-content:flex-end; margin-right: 60px; color: white;}
+.footer_right_container{display: flex; justify-content: flex-end;align-items: center; color: white;}
+.footer_right_container a{ padding: 10px 20px; font-size: 12px; color: grey; }
+.footer_right_container a:hover{color: skyblue;}
+
+
+@keyframes hide{
+ 0%{opacity: 0;}
+ 100%{opacity: 0;}
+}
+@keyframes blinks{
+ 0%{opacity: 0;}
+
+ 100%{opacity: 1;}
+}
+@keyframes dot{
+ 0%{opacity: 0;}
+ 50%{opacity: 0;}
+ 75%{opacity: 1;}
+ 80%{opacity: 0;}
+ 100%{opacity: 1;}
+
+
+ 
+}
+@keyframes opacity{
+  0%{opacity: 0}
+  50%{opacity: 0.5}
+  0%{opacity: 1}
+}
+@keyframes change{
+  0%{transform: translateY(0px);}
+  50%{transform:translateY(-60px)}
+  100%{transform:translateY(-130px)}
+
+}
+
+
+
+</style>
+
+
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<body>
+
+
+<!-- Icon Bar (Sidebar - hidden on small screens)    -->
+<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center" style="background-color: #222222; color: white; opacity:">
+  <!-- Avatar image in top left corner -->
+  
+  <a href="/">
+ <div class="boxx">
+   <div class="boxx1">
+     <div class="icon"><i class="fa fa-home w3-xxlarge"></i></div>
+     <div class="name">HOME</div>
+   </div>
+  </a>
+   <a href="/post">
+   <div class="boxx2">
+      <div class="icon"><i class="fa fa-clipboard w3-xxlarge"></i></div>
+      <div class="name">POST</div>
+   </div>
+   </a>
+    <a href="/blogs">
+   <div class="boxx2">
+      <div class="icon"><i class="fa fa-pencil w3-xxlarge"></i></div>
+     <div class="name">BLOGS</div>
+   </div>
+   </a> 
+</nav>
+
+<!-- Navbar on small screens (Hidden on medium and large screens) -->
+<div class="w3-top w3-hide-large w3-hide-medium w3-content" id="myNavbar">
+  <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off">
+     <ul class="Flex">
+       <li><a href=""> home</a></li>
+       <li><a href=""> about</a></li>
+       <li><a href=""> photos</a></li>
+       <li><a href=""> contact</a></li>
+     </ul>
+
+    
+  </div>
+</div>  
+
+<section id="postbanner" >
+  <div class="header">
+<div class="content">
+  <ul class="content_container">
+    <li class="content_container_item">hello Every enthusiastic person</li>
+    <li class="content_container_item">welcome to gadgets news</li>
+  </ul>
+</div>
+<div class="bannerurl w3-justify">Think before you speak. Read before you think.</div>
+</div>
+
+</section>
+
+
+<section id="postcontent" style="display: flex; justify-content: center; align-items: center; margin-top: 30px;" >
+<!--   carasoul  starts from here -->
+     <div class="slider " id="slider" >
+      <div class="slides">
+
+        <!-- radio button starts here -->
+        <input type="radio" name="radio-btn" id="radio1">
+        <input type="radio" name="radio-btn" id="radio2">
+        <input type="radio" name="radio-btn" id="radio3">
+        <input type="radio" name="radio-btn" id="radio4">
+        <!-- radio button ends here -->
+
+        <!-- image starts here -->
+        <div class="slide first">
+        <img src="{% static 'img/faro-2903060_1280.jpg' %}">
+      </div>
+      <div class="slide">
+        <img src="{% static 'img/notebook-1850613_1920.jpg' %}">
+      </div>
+      <div class="slide">
+        <img src="{% static 'img/photo-351528_1920.jpg' %}">
+      </div>
+      <div class="slide">
+        <img src="{% static 'img/faro-2903060_1280.jpg' %}">
+      </div>
+        <!-- image ends here -->
+        <!-- navigation auto starts here -->
+        <div class="navigation-auto">
+          <div class="auto-btn1 one"></div>
+          <div class="auto-btn2 two"></div>
+          <div class="auto-btn3 three"></div>
+          <div class="auto-btn4 four"></div>
+
+        </div>
+        <!-- navigation auto ends here -->
+        <!-- manual navigation stars here -->
+        <div class="navigation-manual">
+          <label for="radio1" class="manual-btn" id="bgbtn1"></label>
+          <label for="radio2" class="manual-btn" id="bgbtn2"></label>
+
+          <label for="radio3" class="manual-btn" id="bgbtn3"></label>
+
+          <label for="radio4" class="manual-btn" id="bgbtn4"></label>
+
+        </div>
+        <!-- manual navigation ends here -->
+
+      </div>
+    
+  
+      
+
+       
+     </div>
+
+
+  
+<!--  carasoul ends here -->
+
+       
+       
+       <div class="trending_container" id="trending_container">
+        <div class="marginhelper" style="margin: 10px">
+        <div class="trending"><span>Trending</span> post</div>
+        
+          {% for trendingpost in trendingpost %}
+          
+        <div class=" trending_post_image w3-half"><img src="{{trendingpost.image.url}}" style="height: 120px; width:120px;" ></div>
+
+          
+          
+          <div class="trending_post_content w3-half">
+            <div class="post_category">{{trendingpost.category}}</div>
+           <a href="/trendingpost/{{trendingpost.slug}}"> <div class="post_title">{{trendingpost.title}}</div></a>
+            <div class="post_date">{{trendingpost.date}}</div>
+
+
+            
+        
+            </div>
+          {% endfor %}
+
+            
+           <!--    {% if trendingpost.has_previous %}
+             <div class="previous"> <a href="">previous</a></div>
+              {% endif %}
+              {{trendingpost.number}}
+              {% if trendingpost.has_next %}
+             <div class="next" style="height: 20px; width: 35px; border:1px solid blue;"> <a href="">next</a></div>
+              {% endif %} -->
+            
+          
+       
+
+        
+          
+        </div>
+        <div class="previouss_next_wrapper">
+
+          <ul style="list-style: none;">
+            {% if trendingpost.has_previous %}
+           <a href="?page={{ trendingpost.previous_page_number }}"> <li>previous</li></a>
+            {% endif %}
+            <li>{{trendingpost.number}}</li>
+             {% if trendingpost.has_next %}
+           <a href="?page={{ trendingpost.next_page_number }}"> <li>next</li></a>
+            {% endif %}
+          </ul>
+         
+
+        
+         
+       </div>
+ 
+
+ 
+    
+
+</section>
+<section id="middle">
+<div class="animation_container">
+  <p>Extra dose of UPDATE</p>
+    <div class="dot_container">
+      <div class="dot1">.</div>
+      <div class="dot2">.</div>
+      <div class="dot3">.</div>
+    </div>
+</div>
+ {% for mainpost in mainpost %}
+  <h3 style="display: flex; justify-content: center; color: red; font-weight: 600; margin-top: 40px;">Extra news regarding {{mainpost.main_title|slice:"0:30"}}...</h1>
+  <h5 style="display: flex;justify-content: center; color: green;">published date:-{{mainpost.date}}</h5>
+ <div class="main_portal grid_wrapper">
+ 
+   <div class="portal_left" >
+     <div class="main_left_image"><img src="{{mainpost.main_image.url}}"></div>
+     <div class="main_left_title w3-justify">{{mainpost.main_title}}</div>
+     <div class="main_left_description w3-justify">{{mainpost.main_content}}</div>
+     <div class="main_left_description w3-justify">{{mainpost.main_description}}</div>
+
+   </div>
+   <div class="portal_right_upper">
+     <div class="main_image"><img src="{{mainpost.right_up_image.url}}"></div>
+     <div class="main_title">{{mainpost.right_up_title}}</div>
+     <div class="main_content">{{mainpost.right_up_content}}</div>
+     <div class="main_description">{{mainpost.right_up_description}}</div>
+   </div>
+   <div class="portal_right_lower">
+    <div class="main_image"><img src="{{mainpost.right_down_image.url}}"></div>
+     <div class="main_title">{{mainpost.right_down_title}}</div>
+     <div class="main_content">{{mainpost.right_down_content}}</div>
+     <div class="main_description">{{mainpost.right_down_description}}</div>
+   </div>
+ 
+
+  
+ </div>
+   {% endfor %}
+    <div class="previouss_next_wrapper_main_content">
+       <ul style="list-style: none;">
+             {% if mainpost.has_previous %}
+           <a href="?page={{ mainpost.previous_page_number }}"><li>previous</li></a>
+            {% endif %}
+            <li>{{mainpost.number}}</li>
+             {% if mainpost.has_next %}
+           <a href="?page={{ mainpost.next_page_number }}"> <li>next</li></a>
+            {% endif %}
+          </ul>
+       </div>
+</section>
+
+<footer>
+  <div class="post_footer">
+    <div class="footer_brand"><i class="far fa-copyright"></i> RD_techinfo</div>
+    <div class="footer_right_container">
+    <a href=""> submit news</a>
+    <a href="">about RD_techinfo</a>
+    <a href=""> Advertise with us</a>
+    <a href=""> Privacy Policy</a>
+    <a href=""> Privacy Policy</a>
+    <a href=""> contact</a>
+    </div>
+  </div>
+  
+</footer>
+
+<script type="text/javascript">
+  var counter=1;
+  setInterval(function(){
+    document.getElementById('radio'+counter).checked= true;
+  
+
+
+    counter++;
+    if(counter>4){
+      counter=1;
+    }
+  },5000);
+
+
+ 
+</script>
+
+</body>
+
+
+
+</html>
